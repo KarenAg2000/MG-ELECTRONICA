@@ -15,8 +15,9 @@ exports.register = (req, res) => {
 
   db.query(sql, [nombres, email, hashed], (err) => {
     if (err) {
-      return res.status(500).json({ msg: "Correo ya registrado" });
+      return res.status(400).json({ msg: "Correo ya registrado" });
     }
+
     res.json({ msg: "Usuario registrado correctamente" });
   });
 };
@@ -27,6 +28,7 @@ exports.login = (req, res) => {
   const sql = "SELECT * FROM usuarios WHERE email=?";
 
   db.query(sql, [email], (err, result) => {
+
     if (result.length === 0) {
       return res.status(401).json({ msg: "Usuario no existe" });
     }
