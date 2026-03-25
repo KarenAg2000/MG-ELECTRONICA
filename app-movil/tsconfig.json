@@ -13,5 +13,5 @@
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
-  ]
+, "hooks/useUtils.js", "__tests__/utils.test.js", "__tests__/App.test.js"  ]
 }
